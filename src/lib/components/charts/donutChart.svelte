@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DonutChart } from '@carbon/charts-svelte';
+	import DonutChart from '@carbon/charts-svelte/src/DonutChart.svelte';
 
 	import '@carbon/styles/css/styles.css';
 	import '@carbon/charts/styles.css';

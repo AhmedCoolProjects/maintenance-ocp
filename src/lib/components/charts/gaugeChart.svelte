@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { GaugeChart } from '@carbon/charts-svelte';
+	import GaugeChart from '@carbon/charts-svelte/src/GaugeChart.svelte';
 
 	import '@carbon/styles/css/styles.css';
 	import '@carbon/charts/styles.css';

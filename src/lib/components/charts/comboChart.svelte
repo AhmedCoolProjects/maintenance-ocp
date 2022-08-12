@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ComboChart } from '@carbon/charts-svelte';
+	import ComboChart from '@carbon/charts-svelte/src/ComboChart.svelte';
 
 	import '@carbon/styles/css/styles.css';
 	import '@carbon/charts/styles.css';
