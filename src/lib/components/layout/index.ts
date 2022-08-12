@@ -1,4 +1,4 @@
-import cardSectionSvelte from './cardSection.svelte';
+import CardSection from './CardSection.svelte';
 import listSectionSvelte from './listSection.svelte';
 
-export { cardSectionSvelte as CardSection, listSectionSvelte as ListSection };
+export { CardSection as CardSection, listSectionSvelte as ListSection };

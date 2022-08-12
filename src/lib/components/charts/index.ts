@@ -3,7 +3,7 @@ import donutChartSvelte from './donutChart.svelte';
 import areaChartSvelte from './areaChart.svelte';
 import comboChartSvelte from './comboChart.svelte';
 import gaugeChartSvelte from './gaugeChart.svelte';
-import lineChartSvelte from './lineChart.svelte';
+import lineChart from './lineChart.svelte';
 
 export {
 	PieChart__SvelteComponent_ as PieChart,
@@ -11,5 +11,5 @@ export {
 	areaChartSvelte as AreaChartLocal,
 	comboChartSvelte as ComboChartLocal,
 	gaugeChartSvelte as GaugeChartLocal,
-	lineChartSvelte as LineChartLocal
+	lineChart as LineChartLocal
 };
