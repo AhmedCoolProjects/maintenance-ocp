@@ -1,5 +1,5 @@
 <script lang="ts">
-	import AreaChart from '@carbon/charts-svelte/src/AreaChart.svelte';
+	import { AreaChart } from '@carbon/charts-svelte';
 
 	import '@carbon/styles/css/styles.css';
 	import '@carbon/charts/styles.css';

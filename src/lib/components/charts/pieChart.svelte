@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '@carbon/styles/css/styles.css';
 	import '@carbon/charts/styles.css';
-	import BarChartSimple from '@carbon/charts-svelte/src/BarChartSimple.svelte';
+	import { BarChartSimple } from '@carbon/charts-svelte';
 	import { ScaleTypes } from '$lib/types';
 
 	export let chartTitle: string;
