@@ -96,8 +96,8 @@
 			},
 			right: {
 				title: 'Rainfall (mm)',
-				mapsTo: 'rainfall'
-				// correspondingDatasets: ['Rainfall']
+				mapsTo: 'rainfall',
+				correspondingDatasets: ['Rainfall']
 			}
 		},
 
