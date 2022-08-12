@@ -12,12 +12,7 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter(),
-		vite: {
-			ssr: {
-				noExternal: ['@carbon/charts']
-			}
-		}
+		adapter: adapter()
 	}
 };
 
