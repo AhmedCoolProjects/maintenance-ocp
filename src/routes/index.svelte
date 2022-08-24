@@ -9,7 +9,8 @@
 		ComboChartLocal,
 		GaugeChartLocal,
 		ListSection,
-		LineChartLocal
+		LineChartLocal,
+		OptionsCard
 	} from '$lib/components';
 </script>
 
@@ -60,7 +61,7 @@
 			</CardSection> -->
 		</div>
 		<div class="col-span-4 space-y-4">
-			<div class="h-[134px] w-full bg-base-200 rounded-box shadow-xl" />
+			<OptionsCard />
 			<CardSection sectionTitle="Status d'accomplissement" iconPath="/pngs/pie.png">
 				<GaugeChartLocal chartTitle="Gauge circular -- warning status" />
 			</CardSection>
