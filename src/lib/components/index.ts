@@ -5,4 +5,4 @@ export * from './charts';
 
        
 
-    
+export * from "./modals"

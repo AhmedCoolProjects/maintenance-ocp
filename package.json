@@ -36,6 +36,7 @@
 	"type": "module",
 	"dependencies": {
 		"@carbon/charts-svelte": "^1.5.1",
+		"axios": "^0.27.2",
 		"d3": "^7.6.1",
 		"daisyui": "^2.22.0"
 	}

@@ -4,20 +4,21 @@
 	import { BarChartSimple } from '@carbon/charts-svelte';
 	import { ScaleTypes } from '$lib/types';
 
-	export let chartTitle: string;
+	export let waitingLength: number,
+		doneLength: number,
+		inProgressLength: number,
+		requiredLength: number;
 </script>
 
 <BarChartSimple
 	theme="g100"
 	data={[
-		{ group: 'Qty', value: 65000 },
-		{ group: 'More', value: 29123 },
-		{ group: 'Sold', value: 35213 },
-		{ group: 'Restocking', value: 51213 },
-		{ group: 'Misc', value: 16932 }
+		{ group: 'REQUIRED', value: requiredLength },
+		{ group: 'WAITING', value: waitingLength },
+		{ group: 'IN PROGRESS', value: inProgressLength },
+		{ group: 'DONE', value: doneLength }
 	]}
 	options={{
-		title: chartTitle,
 		height: '400px',
 		axes: {
 			left: { mapsTo: 'value' },
