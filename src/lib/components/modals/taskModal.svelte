@@ -22,9 +22,11 @@
 				{modalTaskData.Status}
 			</div>
 
-			<div class="badge badge-accent">
-				{modalTaskData.Frq - day} j restés
-			</div>
+			{#if modalTaskData.Frq - day > 0}
+				<div class="badge badge-accent">
+					{modalTaskData.Frq - day} j restés
+				</div>
+			{/if}
 		</h3>
 
 		<div class="grid grid-cols-3 my-2">

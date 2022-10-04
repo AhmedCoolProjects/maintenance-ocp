@@ -105,12 +105,11 @@
 	</div>
 	<div class="col-span-8 -mt-7 grid grid-cols-12 gap-3">
 		<div class="col-span-8 space-y-4">
-			<CardSection sectionTitle="Les Status Currents" iconPath="/pngs/filter-report.png">
+			<CardSection sectionTitle="Les Taches par Periodes" iconPath="/pngs/filter-report.png">
 				<PieChart
-					waitingLength={$waitingTasksList.length}
-					requiredLength={$requiredTasksList.length}
-					inProgressLength={$inProgressTasksList.length}
-					doneLength={$doneTasksList.length}
+					perDay={$dailyTasksList.length}
+					perTwoWeeks={$twoWeeksTasksList.length}
+					perMonth={$monthlyTasksList.length}
 				/>
 			</CardSection>
 		</div>

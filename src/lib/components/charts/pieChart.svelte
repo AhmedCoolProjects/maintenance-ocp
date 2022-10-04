@@ -4,19 +4,15 @@
 	import { BarChartSimple } from '@carbon/charts-svelte';
 	import { ScaleTypes } from '$lib/types';
 
-	export let waitingLength: number,
-		doneLength: number,
-		inProgressLength: number,
-		requiredLength: number;
+	export let perDay: number, perTwoWeeks: number, perMonth: number;
 </script>
 
 <BarChartSimple
 	theme="g100"
 	data={[
-		{ group: 'REQUIRED', value: requiredLength },
-		{ group: 'WAITING', value: waitingLength },
-		{ group: 'IN PROGRESS', value: inProgressLength },
-		{ group: 'DONE', value: doneLength }
+		{ group: 'Par Jour', value: perDay },
+		{ group: 'Par 2 Semaines', value: perTwoWeeks },
+		{ group: 'Par Mois', value: perMonth }
 	]}
 	options={{
 		height: '400px',
