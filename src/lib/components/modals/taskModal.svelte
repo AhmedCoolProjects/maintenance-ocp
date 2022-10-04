@@ -31,7 +31,7 @@
 
 		<div class="grid grid-cols-3 my-2">
 			<div class="w-full p-2 text-center shadow-lg rounded-lg space-y-2">
-				<h2>Fréquence</h2>
+				<h2 class="text-base">Fréquence</h2>
 				<p class="font-semibold">
 					{#if modalTaskData.Frq == 1}
 						Par jour
@@ -43,13 +43,13 @@
 				</p>
 			</div>
 			<div class="w-full p-2 text-center shadow-lg rounded-lg space-y-2">
-				<h2>Nbr d'Employés</h2>
+				<h2 class="text-base">Nbr d'Employés</h2>
 				<p class="font-semibold">
 					{modalTaskData.EmployesNbr}
 				</p>
 			</div>
 			<div class="w-full p-2 text-center shadow-lg rounded-lg space-y-2">
-				<h2>Durée (heures)</h2>
+				<h2 class="text-base">Durée (heures)</h2>
 				<p class="font-semibold">
 					{modalTaskData.TimeNeeded}
 				</p>
