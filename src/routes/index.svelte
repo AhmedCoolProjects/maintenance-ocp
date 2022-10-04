@@ -20,7 +20,8 @@
 		getInProgressTasks,
 		getDoneTasks,
 		getSuggestedTasks,
-		getWaitingTasks
+		getWaitingTasks,
+		getLogsCountPerDay
 	} from '$lib/functions/get';
 	import { onMount } from 'svelte';
 	import { writable, type Writable } from 'svelte/store';
@@ -30,6 +31,7 @@
 	let monthlyTasksList: Writable<any[]> = writable([]);
 	let allTasksList: Writable<any[]> = writable([]);
 	let suggestedTasksList: Writable<any[]> = writable([]);
+	let logsCountPerDay: Writable<any[]> = writable([]);
 
 	// Per Status
 	let requiredTasksList: Writable<any[]> = writable([]);
@@ -50,12 +52,14 @@
 		await getDoneTasks(doneTasksList);
 		await getSuggestedTasks(suggestedTasksList);
 		await getWaitingTasks(waitingTasksList);
+		await getLogsCountPerDay(logsCountPerDay);
 	});
 </script>
 
 <svelte:head>
 	<title>Maintenance | Dashboard</title>
 </svelte:head>
+
 <!-- HEADER START -->
 <header class="grid gap-3 grid-cols-12">
 	<div
@@ -82,6 +86,7 @@
 	</div>
 </header>
 <!-- HEADER END -->
+
 <!-- MAIN 1 START -->
 <main class="grid gap-3 grid-cols-12 mt-4">
 	<div class="col-span-2 space-y-4">
@@ -147,14 +152,21 @@
 			</CardSection>
 		</div>
 		<div class="col-span-7 space-y-4">
-			<CardSection sectionTitle="Actions par machines" iconPath="/pngs/filter-report.png">
-				<!-- <AreaChartLocal chartTitle="Area (time series)" /> -->
-				<LineChartLocal chartTitle="Area (time series)" />
+			<CardSection sectionTitle="Taches Incomplètes par Jour" iconPath="/pngs/filter-report.png">
+				{#if $logsCountPerDay.length > 0}
+					<LineChartLocal data={$logsCountPerDay} />
+				{:else}
+					<LineChartLocal
+						data={[
+							{
+								_id: '00',
+								count: 0,
+								group: 'incompletedDays'
+							}
+						]}
+					/>
+				{/if}
 			</CardSection>
-
-			<!-- <CardSection sectionTitle="Actions par machines" iconPath="/pngs/filter-report.png">
-				<ComboChartLocal chartTitle="Combo (Line + Simple bar) - custom configs" />
-			</CardSection> -->
 		</div>
 	</div>
 	<div class="col-span-2 space-y-4">
@@ -192,23 +204,14 @@
 </main>
 <!-- MAIN 1 END -->
 
+<!-- FAB  -->
+<label for="my-drawer-4" class="drawer-button absolute bottom-4 right-10 btn btn-primary"
+	>Open Logs</label
+>
+<!-- FAB END -->
+
 <!-- TASK MODAL START -->
 
 <TaskModal modalTaskData={$modalTaskData} modalId={$modalId} />
 
 <!-- TASK MODAL END -->
-
-<!-- <CardSection sectionTitle="Actions par machines" iconPath="/pngs/filter-report.png">
-			<AreaChartLocal chartTitle="Area (time series)" />
-			<LineChartLocal chartTitle="Area (time series)" /> 
-		</CardSection> -->
-
-<!-- <CardSection sectionTitle="Actions par machines" iconPath="/pngs/filter-report.png">
-			<ComboChartLocal chartTitle="Combo (Line + Simple bar) - custom configs" />
-		</CardSection> -->
-
-<!-- <div class="col-span-3 space-y-4 mt-3">
-		<CardSection sectionTitle="Status d'accomplissement" iconPath="/pngs/pie.png">
-			<DonutChart chartTitle="Donut" />
-		</CardSection>
-	</div> -->

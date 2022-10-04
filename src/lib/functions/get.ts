@@ -59,7 +59,6 @@ export async function getRequiredTasks(
     await httpCommun
         .get('/operations/status/REQUIRED', {})
         .then((res) => {
-            console.log('res: ', res);
             requiredTasksList.set(res.data);
         })
         .catch((er) => {
@@ -117,4 +116,55 @@ export async function getSuggestedTasks(
         .catch((er) => {
             console.error('er: ', er);
         });
+}
+
+export async function getLogs(
+    logsList: Writable<any[]>,
+){
+    await httpCommun
+        .get('/logs/all', {})
+        .then((res) => {
+            logsList.set(res.data);
+        })
+        .catch((er) => {
+            console.error('er: ', er);
+        });
+}
+
+export async function getTaskById(
+    task: Writable<any>,
+    id: string,
+){
+    await httpCommun
+        .get(`/operations/${id}`, {})
+        .then((res) => {
+            task.set(res.data);
+        })
+        .catch((er) => {
+            console.error('er: ', er);
+        });
+}
+
+export async function getLogsCountPerDay(
+    logsCountPerDay: Writable<any[]>,
+){
+    await httpCommun
+        .get('/logs/days', {})
+        .then((res) => {
+            const myList = res.data;
+            // add group attribute inside each object
+            myList.forEach((item: any) => {
+                item.group = "incompletedDays";
+            });
+            // order by parseInt _id
+            myList.sort((a: any, b: any) => {
+                return parseInt(a._id) - parseInt(b._id);
+            });
+            
+            logsCountPerDay.set(myList);
+        })
+        .catch((er) => {
+            console.error('er: ', er);
+        });
+
 }
