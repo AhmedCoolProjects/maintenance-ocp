@@ -48,7 +48,7 @@
 					</div>
 					<div class="collapse-content">
 						{#if $task?._id !== undefined}
-							<h3 class="text-lg font-bold">
+							<h3 class="text-lg font-semibold">
 								{$task.Lign +
 									' -> ' +
 									$task.ActivityCode +
@@ -63,7 +63,7 @@
 
 							<div class="grid grid-cols-3 my-2">
 								<div class="w-full p-2 text-center shadow-lg rounded-lg space-y-2">
-									<h2>Fréquence</h2>
+									<h2 class="text-base">Fréquence</h2>
 									<p class="font-semibold">
 										{#if $task.Frq == 1}
 											Par jour
@@ -75,13 +75,13 @@
 									</p>
 								</div>
 								<div class="w-full p-2 text-center shadow-lg rounded-lg space-y-2">
-									<h2>Nbr d'Employés</h2>
+									<h2 class="text-base">Nbr d'Employés</h2>
 									<p class="font-semibold">
 										{$task.EmployesNbr}
 									</p>
 								</div>
 								<div class="w-full p-2 text-center shadow-lg rounded-lg space-y-2">
-									<h2>Durée (heures)</h2>
+									<h2 class="text-base">Durée (heures)</h2>
 									<p class="font-semibold">
 										{$task.TimeNeeded}
 									</p>
